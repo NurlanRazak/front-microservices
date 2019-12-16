@@ -55,4 +55,49 @@ html {
   color: #fff;
   background-color: #35495e;
 }
+
+
+    .post-form {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        margin: 20px;
+        width: 400px;
+    }
+    label {
+        display: block;
+        width: 200px;
+        padding: 10px;
+        margin: 0;
+        margin-top: 5px;
+    }
+
+    input {
+        width: 400px;
+        padding: 10px;
+        margin: 0;
+    }
+
+    .button-wrp {
+        text-align: center;
+    }
+
+    button[type='submit'] {
+        margin-top: 20px;
+        padding: 10px 30px;
+        background-color: #478f2fc9;
+        border: none;
+        color: white;
+        font-weight: bolder;
+        transition: 0.5s;
+        outline: none;
+    }
+
+    button[type='submit']:hover {
+        border: none;
+        cursor: pointer;
+        background-color: green;
+    }
+
 </style>
