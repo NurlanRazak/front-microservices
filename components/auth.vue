@@ -20,6 +20,8 @@
 </template>
 
 <script>
+import {mapActions} from 'vuex'
+
 export default {
     data() {
         return {
@@ -30,19 +32,18 @@ export default {
         }
     },
     mounted() {
-        this.closeModal()
-        
+
+
         if (process.client) {
             document.body.classList.add('modal-hidden')
         }
     },
     methods: {
+        ...mapActions({
+            signin: 'auth/signin',
+        }),
         async sendAuth() {
-            let resp = await this.$axios.$post('http://localhost:9101/login', {
-                username: username,
-                password: password
-            })
-            console.log(resp)
+            await this.signin({username: this.username, password: this.password})
             this.closeModal()
         },
         closeModal() {

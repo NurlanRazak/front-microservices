@@ -32,6 +32,10 @@ module.exports = {
       proxyHeaders: false,
       credentials: false
   },
+
+  plugins: [
+      { src: '~/plugins/axios' },
+  ],
   /*
   ** Build configuration
   */

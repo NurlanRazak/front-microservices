@@ -14,7 +14,9 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.6.0",
-    "nuxt": "^2.0.0"
+    "helmet": "^3.21.2",
+    "nuxt": "^2.0.0",
+    "nuxt-helmet": "^1.2.1"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",

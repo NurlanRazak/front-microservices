@@ -1,6 +1,6 @@
 <template>
     <section class="sec">
-        <form class="post-form" @submit.prevent="createPost">
+        <form class="post-form" action="test" @submit.prevent="createPost">
             <div>
                 <label for="title">Title: </label>
                 <input type="text" id="title" v-model="post.title" name="title" required/>
@@ -34,13 +34,8 @@ export default {
     },
     methods: {
     async createPost() {
-            let resp = await this.$axios.$post('http://localhost::8085/api/catalog/post/add', {
-                img: img,
-                title: title,
-                text: text
-            })
-            console.log(resp)
-            console.log(this.post)
+            let resp = await this.$axios.post('http://192.168.100.9:8085/api/catalog/post/add', this.post)
+            window.location.href='/'
         }
     }
 }
@@ -48,7 +43,7 @@ export default {
 
 <style>
     .sec {
-        background-image: url('/imgs/bg.png');
+        /* background-image: url('/imgs/bg.png'); */
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
