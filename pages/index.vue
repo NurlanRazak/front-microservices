@@ -3,11 +3,11 @@
         <div class="portfolio-warp">
             <!-- single item -->
             <div v-for="(article, index) in articles" :key="index" class="single-portfolio set-bg" :data-setbg="article.img">
-                <a href="single-work.html" class="portfolio-info">
+                <nuxt-link :to="'/article/' + index" class="portfolio-info">
                     <div class="pfbg set-bg" :data-setbg="article.img"></div>
                     <h5>{{ article.title }}</h5>
                     <p>{{ article.text }}</p>
-                </a>
+                </nuxt-link>
             </div>
         </div>
         <div class="clearfix"></div>
