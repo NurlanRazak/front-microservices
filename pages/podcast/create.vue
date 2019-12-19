@@ -2,16 +2,16 @@
     <section class="sec">
         <form class="post-form" action="test" @submit.prevent="createPost">
             <div>
-                <label for="title">Title: </label>
-                <input type="text" id="title" v-model="post.title" name="title" required/>
+                <label for="title">Name: </label>
+                <input type="text" id="title" v-model="post.name" name="title" required/>
             </div>
             <div>
-                <label for="img">Image: </label>
-                <input type="text" id="img" v-model="post.img" name="img" required/>
+                <label for="img">Video: </label>
+                <input type="text" id="img" v-model="post.link" name="img" required/>
             </div>
             <div>
-                <label for="text">Text: </label>
-                <input type="text" id="text" v-model="post.text" name="text" required/>
+                <label for="text">Description: </label>
+                <input type="text" id="text" v-model="post.description" name="text" required/>
             </div>
             <div class="button-wrp">
                 <button type="submit">Submit</button>
@@ -34,8 +34,8 @@ export default {
     },
     methods: {
     async createPost() {
-            let resp = await this.$axios.post('http://172.16.3.205:8085/api/catalog/post/add', this.post)
-            window.location.href='/'
+            let resp = await this.$axios.post('http://172.16.3.205:8085/api/catalog/podcast/add', this.post)
+            window.location.href='/podcast'
         }
     }
 }

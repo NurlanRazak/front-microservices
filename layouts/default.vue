@@ -11,7 +11,17 @@
 </template>
 
 <style>
-html {
+.linkk {
+    position: fixed;
+    right: 140px;
+    bottom: 40px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.5s;
+    z-index: 10000;
+}
+ html {
   font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
   word-spacing: 1px;

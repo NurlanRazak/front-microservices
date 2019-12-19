@@ -1,18 +1,18 @@
 <template>
     <section class="portfolio-section">
-        <a class="linkk" href="/podcast">Podcasts</a>
+        <a class="linkk" href="/">Posts</a>
         <div class="portfolio-warp">
             <!-- single item -->
-            <div v-for="(article, index) in articles" :key="index" class="single-portfolio set-bg" :data-setbg="article.img">
-                <nuxt-link :to="'/article/' + index" class="portfolio-info">
-                    <div class="pfbg set-bg" :data-setbg="article.img"></div>
-                    <h5>{{ article.title }}</h5>
-                    <p>{{ article.text }}</p>
+            <div v-for="(article, index) in articles" :key="index" class="single-portfolio set-bg" :data-setbg="`https://img.youtube.com/vi/${article.link}/default.jpg`">
+                <nuxt-link :to="'/podcast/' + index" class="portfolio-info">
+                    <div class="pfbg set-bg" :data-setbg="`https://img.youtube.com/vi/${article.link}/default.jpg`"></div>
+                    <h5>{{ article.name }}</h5>
+                    <p>{{ article.description }}</p>
                 </nuxt-link>
             </div>
         </div>
         <div class="clearfix"></div>
-        <nuxt-link to="post" class="add-post">
+        <nuxt-link to="/podcast/create" class="add-post">
             <div>
                 +
             </div>
@@ -28,8 +28,7 @@ export default {
 
     computed: {
         ...mapGetters({
-            articles: 'article/getArticles',
-            podcasts: 'info/getPodcasts',
+            articles: 'info/getPodcasts',
         }),
     },
     mounted() {
